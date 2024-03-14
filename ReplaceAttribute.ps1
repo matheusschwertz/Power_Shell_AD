@@ -1,7 +1,7 @@
 Import-Module ActiveDirectory
 
 # Ler nomes dos grupos do arquivo CSV
-$grupos = Import-Csv -Path "C:\Users\a.mschwertz\Documents\PowerShell\NomeGrupo.csv" | Select-Object -ExpandProperty NomeGrupo
+$grupos = Import-Csv -Path "/home/matheus/projects/powershell/NomeGrupo" | Select-Object -ExpandProperty NomeGrupo
 
 foreach ($grupo in $grupos) {
     $group = Get-ADGroup -Identity $grupo -ErrorAction SilentlyContinue
